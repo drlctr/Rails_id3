@@ -1,0 +1,33 @@
+<h1>Listing id3_tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song title</th>
+      <th>Artist</th>
+      <th>Album title</th>
+      <th>Track</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @id3_tags.each do |id3_tag| %>
+      <tr>
+        <td><%= id3_tag.song_title %></td>
+        <td><%= id3_tag.artist %></td>
+        <td><%= id3_tag.album_title %></td>
+        <td><%= id3_tag.track %></td>
+        <td><%= link_to 'Show', id3_tag %></td>
+        <td><%= link_to 'Edit', edit_id3_tag_path(id3_tag) %></td>
+        <td><%= link_to 'Destroy', id3_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Id3 tag', new_id3_tag_path %>
