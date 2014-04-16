@@ -1,10 +1,11 @@
 <html>
 <body>
 <h1>Welcome to the LctrID3 Site</h1>
-<h1> <%= pick_guitar %> </h1>
-<%= image_tag(pick_guitar) %>
+
+<%= image_tag(pick_guitar(@color_white)) %>
 <br>
 <%= link_to 'I want a white guitar!', hello_path(color_white: true) %>
+&nbsp;
 <%= link_to 'I want a natural guitar!', hello_path(color_white: false) %>
 <br>
 <br>
