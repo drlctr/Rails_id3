@@ -1,6 +1,10 @@
 class Id3TagsController < ApplicationController
   before_action :set_id3_tag, only: [:show, :edit, :update, :destroy]
 
+  before_action :edit_warning, only: :edit
+
+  layout 'augmented'
+
   # GET /id3_tags
   # GET /id3_tags.json
   def index
@@ -70,5 +74,9 @@ class Id3TagsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def id3_tag_params
       params.require(:id3_tag).permit(:song_title, :artist, :album_title, :track)
+    end
+
+    def edit_warning
+      @warning = "Be Careful Editing Data!"
     end
 end
