@@ -20,5 +20,10 @@
   <%= @id3_tag.track %>
 </p>
 
+<p>
+  <strong>Path:</strong>
+  <%= @id3_tag.path %>
+</p>
+
 <%= link_to 'Edit', edit_id3_tag_path(@id3_tag) %> |
 <%= link_to 'Back', id3_tags_path %>
