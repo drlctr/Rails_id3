@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424033254) do
+ActiveRecord::Schema.define(version: 20140427201656) do
+
+  create_table "genres", force: true do |t|
+    t.string   "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "id3_tag_id"
+  end
 
   create_table "id3_tags", force: true do |t|
     t.string   "song_title"
@@ -21,6 +28,20 @@ ActiveRecord::Schema.define(version: 20140424033254) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "path"
+  end
+
+  create_table "musicians", force: true do |t|
+    t.string   "name"
+    t.string   "instrument"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "played_ons", force: true do |t|
+    t.integer  "musician_id"
+    t.integer  "id3_tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
