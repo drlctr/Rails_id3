@@ -7,6 +7,7 @@
       <th>Artist</th>
       <th>Album title</th>
       <th>Track</th>
+      <th>Genre</th>
       <th>Path</th>
       <th></th>
       <th></th>
@@ -21,6 +22,9 @@
         <td><%= id3_tag.artist %></td>
         <td><%= id3_tag.album_title %></td>
         <td><center> <%= id3_tag.track %></center></td>
+        <td><% id3_tag.genres.map do |g| %>
+          <%= g.genre %>
+          <% end %> </td>
         <td><%= id3_tag.path %></td>
         <td><%= link_to 'Show', id3_tag %></td>
         <td><%= link_to 'Edit', edit_id3_tag_path(id3_tag) %></td>
