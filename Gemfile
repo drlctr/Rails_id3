@@ -5,7 +5,11 @@ gem 'rails', '4.0.4'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
+
+# Use Factory Girl for testing
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
