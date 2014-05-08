@@ -23,7 +23,7 @@ describe Id3TagsController do
   # This should return the minimal set of attributes required to create a valid
   # Id3Tag. As you add validations to Id3Tag, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "song_title" => "MyString" } }
+  let(:valid_attributes) { { "song_title" => "MyString", "track" => 1 } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -77,7 +77,9 @@ describe Id3TagsController do
 
       it "redirects to the created id3_tag" do
         post :create, {:id3_tag => valid_attributes}, valid_session
-        response.should redirect_to(Id3Tag.last)
+        #response.should redirect_to(Id3Tag.last)
+        #redirect no longer operative, as I added the created page.
+        expect(response).to be_success
       end
     end
 

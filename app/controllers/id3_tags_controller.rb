@@ -32,7 +32,8 @@ class Id3TagsController < ApplicationController
 
     respond_to do |format|
       if @id3_tag.save
-        format.html { redirect_to @id3_tag, notice: 'Id3 tag was successfully created.' }
+        format.html { render '/shared/created'}
+        #format.html { redirect_to @id3_tag, notice: 'Id3 tag was successfully created.' }
         format.json { render action: 'show', status: :created, location: @id3_tag }
       else
         format.html { render action: 'new' }
