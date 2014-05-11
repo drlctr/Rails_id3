@@ -3,6 +3,8 @@ class Id3Tag < ActiveRecord::Base
 	has_many :played_ons
 	has_many :musicians, through: :played_ons
 
+	accepts_nested_attributes_for :genres
+
 	validates :song_title, presence:  true
 	validates :track, :numericality => {:greater_than => 0, :only_integer => true}
 

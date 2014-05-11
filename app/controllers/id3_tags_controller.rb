@@ -19,6 +19,7 @@ class Id3TagsController < ApplicationController
   # GET /id3_tags/new
   def new
     @id3_tag = Id3Tag.new
+    @id3_tag.genres.build
   end
 
   # GET /id3_tags/1/edit
@@ -74,7 +75,7 @@ class Id3TagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def id3_tag_params
-      params.require(:id3_tag).permit(:song_title, :artist, :album_title, :track)
+      params.require(:id3_tag).permit(:song_title, :artist, :album_title, :track, genres: [],genres_attributes: [:genre])
     end
 
     def edit_warning

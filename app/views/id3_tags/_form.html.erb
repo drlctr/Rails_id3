@@ -31,7 +31,18 @@
     <%= f.label :path %><br>
     <%= f.text_field :path %>
   </div>
+
+<p><h1> Genre: </h1>
+  <%=f.fields_for :genres do |genre_form| %>
+    <div class = "field">
+      <%= genre_form.label :genre %><br>
+      <%= genre_form.text_field :genre %>
+
+    </div>
+    <% end %> </p>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

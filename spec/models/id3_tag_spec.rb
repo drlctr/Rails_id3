@@ -27,14 +27,17 @@ describe Id3Tag do
 		it "must have a positive track number" do
 			expect(test3.valid?).to be_false
 		end
-
+		
 	end
 
 
 
 # Will hold off on this test until I understand fixtures.
-#	it "correctly prints out a summary" do
-#		expect(test.summary).to eq("On New Day Rising, Bob Mould played Guitar, Bob Mould played Vocals, Grant Hart played Drums, Grant Hart played Vocals, Greg Norton played Bass.")
-#  end
+	it "correctly prints out a summary" do
+		test_m = FactoryGirl.create(:musician)
+		puts "blah #{test_m.name}"
+		fg_test = FactoryGirl.create(:id3_tag)
+		expect(fg_test.summary).to eq("On New Day Rising, Bob Mould played Guitar, Bob Mould played Vocals, Grant Hart played Drums, Grant Hart played Vocals, Greg Norton played Bass.")
+  end
 
 end
