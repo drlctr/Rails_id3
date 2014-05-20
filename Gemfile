@@ -10,6 +10,8 @@ end
 
 # Use Factory Girl for testing
 
+gem 'devise'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

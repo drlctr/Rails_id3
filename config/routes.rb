@@ -1,5 +1,6 @@
 Id3Mgt::Application.routes.draw do
 
+  devise_for :users
   resources :id3_tags
 
   get '/hello', to: 'home#hello'
