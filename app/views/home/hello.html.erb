@@ -9,10 +9,14 @@
 <%= link_to 'I want a natural guitar!', hello_path(color_white: false) %>
 <br>
 <br>
-<%= link_to('Tag Database', id3_tags_path) %>
+<h2><%= link_to('Tag Database', id3_tags_path) %></h2>
 
-<h1>
-<%= link_to('Buy more music!', '/purchase') %>
+<h2><%= link_to('Buy more music!', '/purchase') %></h2>
+
+<% unless user_signed_in? %>
+  <h2><li><%= link_to "Not a user?  Sign Up Now!", new_user_registration_path %></li>
+  <li><%= link_to "Already a user?  Sign In!", new_user_session_path %></li></h2>
+  <% end %>
 </body>
 </html>
 

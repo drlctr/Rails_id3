@@ -1,4 +1,7 @@
 class Id3TagsController < ApplicationController
+
+  before_action :authenticate_user! #, only [:edit, :update, :destroy]
+
   before_action :set_id3_tag, only: [:show, :edit, :update, :destroy]
 
   before_action :edit_warning, only: :edit
